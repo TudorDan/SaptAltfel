@@ -1,0 +1,160 @@
+.svg-container {
+    position: relative;
+    width: 100%; /* Full width of the viewport */
+    height: auto; /* Adjust the height depending on the SVG */
+    background-image: url('images/background.webp'); /* Path to your background image */
+    background-size: cover; /* Ensures the image covers the entire container */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents image repetition */
+}
+
+
+/* Modal Styles */
+#teamModal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.5); /* Black with transparency */
+}
+
+#teamModal .modal-content {
+    background-image: url('images/Poenari.webp'); /* Path to your webp image */
+    background-size: cover; /* Make sure the background covers the whole modal */
+    background-position: center; /* Center the background image */
+    border-radius: 10px;
+    margin: 10% auto; /* 10% from the top and centered */
+    padding: 20px;
+    width: 50%; /* Could be any size */
+    height: 60%;
+    color: rgb(79, 2, 155); /* Make text white for better contrast */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Close button styling */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Quiz Modal Styles */
+#quizModal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top of everything */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with transparency */
+}
+
+#quizModal .modal-content {
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+    background-image: url('images/Poenari.webp'); /* Optional: Add a background image */
+    background-size: cover; /* Cover the entire modal */
+    background-position: center; /* Center the background image */
+    border-radius: 10px; /* Rounded corners */
+    margin: 10% auto; /* 10% from the top, centered horizontally */
+    padding: 20px;
+    width: 50%; /* Can adjust this size based on your preference */
+    height: 60%; /* Customize as needed */
+    color: rgb(79, 2, 155); /* Match text color to the team's modal */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Add a shadow for depth */
+    text-align: center; /* Center text and content */
+}
+
+/* Close button styling */
+#quizModal .close {
+    color: white; /* Make close button stand out */
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#quizModal .close:hover,
+#quizModal .close:focus {
+    color: #bbb; /* Change color on hover */
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Styling for the answer buttons */
+#answersContainer .answer-btn {
+    display: block; /* Make each button a block element */
+    margin: 10px auto; /* Center each button */
+    padding: 10px;
+    width: 80%; /* Adjust the button width */
+    background-color: rgb(79, 2, 155); /* Button background color */
+    color: white; /* Button text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#answersContainer .answer-btn:hover {
+    background-color: rgb(115, 51, 174); /* Slightly darker on hover */
+}
+
+#quizQuestion {
+    background-color: rgba(255, 255, 255, 0.8); /* Light translucent white background */
+    padding: 10px; /* Add some padding around the text */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 18px; /* Adjust the font size */
+    color: #333; /* Text color */
+    margin-bottom: 20px; /* Add space below the question */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow for depth */
+}
+
+/* Ensure the close button is positioned in the top-right corner */
+.close-quiz {
+    position: absolute;  /* Absolute positioning inside the modal */
+    right: 20px;  /* Distance from the right edge */
+    top: 20px;    /* Distance from the top edge */
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+}
+
+.close-quiz:hover {
+    color: #bbb;
+}
+
+/* Style for the quiz modal content */
+#quizModal .modal-content {
+    background-color: rgba(0, 0, 0, 0.8); /* Example background color */
+    border-radius: 10px;
+    padding: 20px;
+    position: relative;  /* Ensure the content is positioned relative to its container */
+    margin: 5% auto;
+    width: 50%;
+    max-width: 600px;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Adjust the position of the question inside the modal */
+#quizQuestion {
+    background-color: rgba(255, 255, 255, 0.8); /* Light translucent background */
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 18px;
+    color: #333;
+    margin-top: 50px; /* Add space from the top to avoid overlapping with the close button */
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
