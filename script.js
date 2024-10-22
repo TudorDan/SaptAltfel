@@ -350,7 +350,7 @@ const quizData = [
         correctAnswerIndex: 1
     }
 ];
-console.log('quizData length:', quizData.length);
+
 let quizIndex = 0;  // Start with the first question
 
 // Define teams and colors
@@ -463,7 +463,7 @@ document.querySelectorAll('path').forEach(county => {
             this.style.fill = activeColor;
             this.setAttribute('fill', activeColor);  // Apply the selected color to the clicked county
         } else {
-            alert('No team color selected');
+            alert('No color selected');
         }
     });
 });
@@ -519,7 +519,6 @@ window.onclick = function (event) {
     }
 };
 
-
 // Example function to trigger the quiz (you can replace this with your game logic)
 function startQuiz() {
     /* const randomQuestionIndex = Math.floor(Math.random() * quizData.length); */
@@ -549,6 +548,44 @@ function addQuizButton() {
     // Append the "Quiz" button to the SVG
     svg.appendChild(quizButton);
 }
+
+// Function to add a "Default Color" box to the top-left of the map
+function addDefaultColorBox() {
+    const svg = document.querySelector('svg'); // Select your SVG element
+
+    // Create the "Default Color" box (rect)
+    const defaultColorBox = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+    defaultColorBox.setAttribute('x', 20);  // Set X position
+    defaultColorBox.setAttribute('y', 60);  // Set Y position (below the "Quiz" button)
+    defaultColorBox.setAttribute('width', 20);  // Width of the box
+    defaultColorBox.setAttribute('height', 20); // Height of the box
+    defaultColorBox.setAttribute('fill', 'lightgray');  // Default color (you can change this)
+    defaultColorBox.setAttribute('cursor', 'pointer'); // Make it look clickable
+
+    // Add click event to set the default color as activeColor
+    defaultColorBox.addEventListener('click', function () {
+        activeColor = this.getAttribute('fill'); // Set the default color
+        console.log('Default color selected:', activeColor);
+    });
+
+    // Append the "Default Color" box to the SVG
+    svg.appendChild(defaultColorBox);
+
+    // Add label for "Default Color"
+    const defaultColorLabel = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+    defaultColorLabel.setAttribute('x', 50);  // Set X position (next to the box)
+    defaultColorLabel.setAttribute('y', 75);  // Align vertically with the box
+    defaultColorLabel.setAttribute('fill', 'black');  // Text color
+    defaultColorLabel.setAttribute('font-size', '14');  // Font size
+    defaultColorLabel.textContent = 'Default Color';  // Label text
+
+    // Append the label to the SVG
+    svg.appendChild(defaultColorLabel);
+}
+
+// Call the function to add the "Default Color" box after the page loads
+addDefaultColorBox();
+
 
 // Call the function to add the "Quiz" button after the page loads
 addQuizButton();
